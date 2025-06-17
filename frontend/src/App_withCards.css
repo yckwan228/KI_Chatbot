@@ -1,0 +1,122 @@
+.chat-container {
+  max-width: 600px;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 90vh;
+  overflow: hidden;
+  background: #6c9c93;
+
+}
+
+.chat-header {
+  background: transparent;
+  color: white;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: #edf5f2;
+  border-radius: 20px;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.chat-bubble.user {
+  background-color: #3a2352;
+  align-self: flex-end;
+  margin-left: auto;
+  color: white;
+  opacity: 0.8;
+}
+
+.chat-bubble.assistant {
+  background-color: white;
+  align-self: flex-start;
+  margin-right: auto;
+  color: #333;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.typing-indicator {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.chat-input {
+  border-top: none;
+  padding: 1rem;
+  background: #6c9c93!;
+  display: flex;
+  justify-content: center;
+}
+
+.chat-input input {
+  border-radius: 25px 0 0 25px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.chat-input button {
+  border-radius: 0 25px 25px 0;
+  background: #3a2352;
+  padding: 0 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.job-card {
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.job-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.job-card:hover {
+  background-color: #6c9c93;
+  opacity: 0.9;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
