@@ -11,7 +11,7 @@ from openai import AssistantEventHandler
 import asyncio
 
 client = OpenAI(
-    api_key="REMOVEDproj-xJnD-4jHuRpKt9ABtNkg1YNngS_Hf-132mLhGMLNsioY4Z8sN1zafUJlNcstxydryoWmIQrzalT3BlbkFJbgrQDZqp2_rHdN08H6SxC3lDCnoeFC22JTZYHPJmpws09VgrF_8RMUPBswXmHxkzf2PMmdaF8A",  # 🔐 DEIN API-KEY HIER
+    api_key="REMOVED...", 
     default_headers={"OpenAI-Beta": "assistants=v2"}
 )
 
