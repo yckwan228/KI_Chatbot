@@ -1,3 +1,4 @@
+import tiktoken
 from fastapi import WebSocket, WebSocketDisconnect
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -9,6 +10,18 @@ from pathlib import Path
 from typing_extensions import override
 from openai import AssistantEventHandler
 import asyncio
+import json
+from datetime import datetime
+
+log_file = "chat_log.json"
+
+# Hilfsfunktion zur Tokenzählung
+def count_tokens(text: str, model: str = "gpt-4") -> int:
+    try:
+        encoding = tiktoken.encoding_for_model(model)
+    except KeyError:
+        encoding = tiktoken.get_encoding("cl100k_base")
+    return len(encoding.encode(text))
 
 client = OpenAI(
     api_key="REMOVEDproj-xJnD-4jHuRpKt9ABtNkg1YNngS_Hf-132mLhGMLNsioY4Z8sN1zafUJlNcstxydryoWmIQrzalT3BlbkFJbgrQDZqp2_rHdN08H6SxC3lDCnoeFC22JTZYHPJmpws09VgrF_8RMUPBswXmHxkzf2PMmdaF8A", 
@@ -153,10 +166,14 @@ async def websocket_chat(websocket: WebSocket):
                 ]
             )
 
+            collected_text = ""
+
             # Event-Handler → stream live zum WebSocket
             class WSHandler(AssistantEventHandler):
                 @override
                 def on_text_delta(self, delta, snapshot):
+                    nonlocal collected_text
+                    collected_text += delta.value
                     asyncio.create_task(websocket.send_text(delta.value))
                 def on_tool_call_created(self, tool_call):
                     print("Assistant verwendet Tool (WebSocket):", tool_call.type, flush=True)
@@ -250,6 +267,37 @@ Verwende keine Listen, kein Markdown, keine Fließtexte.
             end_time = time.time()
             duration = round(end_time - start_time, 2)
             print("Antwortdauer:", duration, "Sekunden")
+
+            # Prompt und Antwort als Log speichern
+            try:
+                prompt_tokens = count_tokens(data, assistant.model)
+                response_tokens = count_tokens(collected_text, assistant.model)
+                total_tokens = prompt_tokens + response_tokens
+                log_entry = {
+                    "timestamp": datetime.now().isoformat(),
+                    "LLM Modell": assistant.model,
+                    "Thread_ID": thread.id,
+                    "prompt": data,
+                    "response": collected_text,
+                    "duration_sec": duration,
+                    "prompt_tokens": prompt_tokens,
+                    "response_tokens": response_tokens,
+                    "total_tokens": total_tokens
+                }
+                if Path(log_file).exists():
+                    with open(log_file, "r+", encoding="utf-8") as f:
+                        try:
+                            logs = json.load(f)
+                        except json.JSONDecodeError:
+                            logs = []
+                        logs.append(log_entry)
+                        f.seek(0)
+                        json.dump(logs, f, indent=2, ensure_ascii=False)
+                else:
+                    with open(log_file, "w", encoding="utf-8") as f:
+                        json.dump([log_entry], f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                print("Fehler beim Speichern des Logs:", e)
 
     except WebSocketDisconnect:
         print("Client disconnected")

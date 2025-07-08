@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-07-08T15:02:19.052882",
+    "LLM Modell": "gpt-4o",
+    "Thread_ID": "thread_C5iF97LWHYggLRIOXuwoFwn7",
+    "prompt": "hallo",
+    "response": "Hallo! Schön, dass Sie hier sind. Bitte lassen Sie mich wissen, welche Art von Position Sie suchen, an welchem Ort Sie interessiert sind und in welcher Branche Sie arbeiten möchten. So kann ich Ihnen die besten Stellenangebote aus den hochgeladenen Daten vorschlagen.",
+    "duration_sec": 7.26,
+    "prompt_tokens": 2,
+    "response_tokens": 54,
+    "total_tokens": 56
+  },
+  {
+    "timestamp": "2025-07-08T15:02:59.517172",
+    "LLM Modell": "gpt-4o",
+    "Thread_ID": "thread_C5iF97LWHYggLRIOXuwoFwn7",
+    "prompt": "suche nach Jobs in Hamburg",
+    "response": "[\n  {\n    \"Titel\": \"W1 Juniorprofessur mit Tenure-Track W2 für Judaistik\",\n    \"Arbeitgeber\": \"Universität Hamburg\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Professor, Professorin\",\n    \"Branche/Fächer\": \"Religion, Theologie;Kultur;Geschichte, Kunstgeschichte, Archäologie;Sprachen und Literatur\",\n    \"Arbeitszeit\": \"Vollzeit\",\n    \"Anstellungsart\": \"Befristet\"\n  },\n  {\n    \"Titel\": \"Werkstudent / studentische Aushilfe Marketing - ZEIT SPRACHEN (d/w/m)\",\n    \"Arbeitgeber\": \"ZEIT SPRACHEN GmbH\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Studentische Hilfskraft\",\n    \"Branche/Fächer\": \"Medien, Kommunikation, Informationsmanagement\",\n    \"Arbeitszeit\": \"Teilzeit\",\n    \"Anstellungsart\": \"Befristet\"\n  },\n  {\n    \"Titel\": \"Wissenschaftliche Mitarbeiterin / Wissenschaftlicher Mitarbeiter (m/w/d) Fakultät für Maschinenbau und Bauingenieurwesen, Professur für Energieverfahrenstechnik\",\n    \"Arbeitgeber\": \"Helmut-Schmidt-Universität - Universität der Bundeswehr Hamburg\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Gruppenleitung, Teamleitung, Laborleitung, Abteilungsleitung, Referatsleitung\",\n    \"Branche/Fächer\": \"Maschinenbau;Verfahrenstechnik;Chemieingenieurwesen\",\n    \"Arbeitszeit\": \"Alle\",\n    \"Anstellungsart\": \"Unbefristet\"\n  }\n]",
+    "duration_sec": 12.51,
+    "prompt_tokens": 6,
+    "response_tokens": 360,
+    "total_tokens": 366
+  },
+  {
+    "timestamp": "2025-07-08T15:03:47.038040",
+    "LLM Modell": "gpt-4o",
+    "Thread_ID": "thread_C5iF97LWHYggLRIOXuwoFwn7",
+    "prompt": "bin aber nur Student",
+    "response": "[\n  {\n    \"Titel\": \"Studentischer Praktikant / Studentisches Praktikum Vermarktung Non Profit Organisationen & Publishing  Zeitverlag (d/w/m)\",\n    \"Arbeitgeber\": \"Zeitverlag Gerd Bucerius GmbH & Co. KG\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Praktikant, Praktikantin\",\n    \"Branche/Fächer\": \"Wirtschaftswissenschaften, Management, Verwaltung;Medien, Kommunikation, Informationsmanagement\",\n    \"Arbeitszeit\": \"Vollzeit\",\n    \"Anstellungsart\": \"Befristet\"\n  },\n  {\n    \"Titel\": \"Studentisches Praktikum / Praktikant Online Marketing & Social Media academics (d/w/m)\",\n    \"Arbeitgeber\": \"academics GmbH\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Praktikant, Praktikantin\",\n    \"Branche/Fächer\": \"Medien, Kommunikation, Informationsmanagement\",\n    \"Arbeitszeit\": \"Vollzeit\",\n    \"Anstellungsart\": \"Befristet\"\n  },\n  {\n    \"Titel\": \"Studentischer Praktikant / Praktikum Softwareentwicklung UI/UX ZEIT Shop (d/w/m)\",\n    \"Arbeitgeber\": \"Zeitverlag Gerd Bucerius GmbH & Co. KG\",\n    \"Ort\": \"Hamburg\",\n    \"Positionen\": \"Praktikant, Praktikantin\",\n    \"Branche/Fächer\": \"Informationstechnik (IT)\",\n    \"Arbeitszeit\": \"Vollzeit\",\n    \"Anstellungsart\": \"Befristet\"\n  }\n]",
+    "duration_sec": 11.03,
+    "prompt_tokens": 4,
+    "response_tokens": 354,
+    "total_tokens": 358
+  }
+]
